@@ -22,8 +22,7 @@ export const LibrosScreen = () => {
     return (
         <div>
             <section class="section__table">
-        <h3>Libros</h3>
-
+        <h2>Libros</h2>
 
         
 

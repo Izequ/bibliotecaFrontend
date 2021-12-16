@@ -102,7 +102,7 @@ export const AñadirPrestamoScreen = () => {
                     </div>
                     
                     <div class="form-group input">
-                      <label for="exampleInputTel1">Fecha Entrega</label>
+                      <label for="exampleInputTel1"><h4>Fecha Entrega</h4></label>
                       <input type="date" class="form-control" name="fecha_entrega" onChange={handleRegisterInputChange} value={fecha_entrega} id="fecha_entrega	" required/>
                   </div>  
     

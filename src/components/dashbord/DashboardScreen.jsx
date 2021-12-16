@@ -23,7 +23,7 @@ export const DashboardScreen = () => {
     return (
         <div>
             <section class="section__table">
-        <h3>Usuarios</h3>
+        <h2>Usuarios</h2>
         <table class="inf-table">  
         <thead>
             <tr class="table__head">

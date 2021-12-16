@@ -45,7 +45,7 @@ export const PresatamosScreen = () => {
     return (
         <div>
              <section class="section__table">
-        <h3>Prestamos</h3>
+        <h2>Prestamos</h2>
 
         <div class="busqueda">
             <Link to="/add">
