@@ -1,0 +1,89 @@
+.biblioteca-footer .footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 50px;
+  color: #fff;
+  background-color: #c21a1c;
+}
+
+.biblioteca-footer .footer > * {
+  flex: 1 100%;
+}
+
+.biblioteca-footer .l-footer {
+  margin-right: 1.5em;
+  margin-bottom: 2em;
+}
+
+.biblioteca-footer .l-footer .footer-img{
+  max-width:  20%;
+
+}
+
+.biblioteca-footer h2 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.biblioteca-footer .footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.biblioteca-footer .footer li {
+  line-height: 2em;
+}
+
+.biblioteca-footer .footer a {
+  text-decoration: none;
+}
+
+.biblioteca-footer .r-footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.biblioteca-footer .r-footer > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.biblioteca-footer .box a {
+  color: rgb(221, 218, 218);
+}
+
+.biblioteca-footer .h-box {
+  column-count: 1;
+  column-gap: 1.25em;
+}
+
+.biblioteca-footer .b-footer {
+  text-align: center;
+  color: rgb(221, 218, 218);
+  padding-top: 40px;
+}
+
+.biblioteca-footer .l-footer p {
+  text-align: justify;
+  margin-right: 0.5em;
+  margin-bottom: 2em;
+  color: rgb(221, 218, 218);
+}
+
+@media screen and (min-width: 600px) {
+  .biblioteca-footer .r-footer > * {
+    flex: 1;
+  }
+
+  .biblioteca-footer .features {
+    flex-grow: 2;
+  }
+
+  .biblioteca-footer .l-footer {
+    flex: 1 0px;
+  }
+
+  .biblioteca-footer .r-footer {
+    flex: 2 0px;
+  }
+}
