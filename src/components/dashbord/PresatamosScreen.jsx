@@ -2,17 +2,20 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { libroStartLoading, StartUpdateLibro } from '../../actions/libros';
 import { prestamoStartLoading, StartUpdate } from '../../actions/prestamo';
 
 export const PresatamosScreen = () => {
 
     const dispatch = useDispatch(); 
     const { prestamos } = useSelector( (state) => state.prestamo );
+    const { libros } = useSelector( (state) => state.libro );
 
  
 
     useEffect(() => {
         dispatch( prestamoStartLoading());
+        dispatch( libroStartLoading());
     
         
     }, [dispatch])
@@ -31,7 +34,11 @@ export const PresatamosScreen = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               dispatch(StartUpdate(prestamo))
-              
+
+                const prueba = libros.filter(libro => libro.id === prestamo.libro_id);
+                prueba[0].copias = prueba[0].copias + 1;
+                dispatch(StartUpdateLibro(prueba[0]));
+                
               Swal.fire(
                 'Entregado!',
                 'Tu libro fue entregado Con Exito.',

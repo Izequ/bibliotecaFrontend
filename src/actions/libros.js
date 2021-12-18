@@ -36,12 +36,12 @@ const libroLoaded = (libros) => ({
 })
 
 
-export const StartUpdate = ( libro ) => {
+export const StartUpdateLibro= ( libro ) => {
     return async(dispatch) => {
         
 
         try {
-            const resp = await fetchConToken(`usuarios/${ libro.id }`, libro, 'PUT' );
+            const resp = await fetchConToken(`libro/${ libro.id }`, libro, 'PUT' );
           
             const body = await resp.json();
 

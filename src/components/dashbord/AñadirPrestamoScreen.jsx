@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { libroStartLoading } from '../../actions/libros';
+import { libroStartLoading, StartUpdateLibro } from '../../actions/libros';
 import { userStartLoading } from '../../actions/user';
 import Select from 'react-select'
 import { useForm } from '../../hooks/userForm';
@@ -37,7 +37,12 @@ export const AñadirPrestamoScreen = () => {
     const handleRegister = ( e ) => {
         e.preventDefault();
       
-        dispatch(startRegisterPrestamo(userid,libroid,fecha_entrega));
+        dispatch(startRegisterPrestamo(userid,libroid,fecha_entrega));        
+
+        const prueba = libros.filter(libro => libro.id === libroid);
+        prueba[0].copias = prueba[0].copias - 1;
+        dispatch(StartUpdateLibro(prueba[0]));
+
        
     }
 
@@ -48,7 +53,9 @@ export const AñadirPrestamoScreen = () => {
         
     }, [dispatch])
     const usuarios = users.map((item)=>{ return {value:item.id, label:item.documento, id:item.id } });
-    const libros1 = libros.map((item)=>{ return {value:item.id, label:item.isb, id:item.id } });
+    
+    const prueba = libros.filter(libro => libro.copias > 0);        
+    const libros1 = prueba.map((item)=>{ return {value:item.id, label:item.isb, id:item.id } });
 
     return (
         <div>
